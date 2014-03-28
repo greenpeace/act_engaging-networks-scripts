@@ -86,7 +86,7 @@ foreach ($databases as $sp_database_id => $en_format_name) {
 			<EXPORT_FORMAT>CSV</EXPORT_FORMAT>
 			<DATE_START>".$back_then."</DATE_START>
 			<DATE_END>".$now."</DATE_END>
-			<INCLUDE_LEAD_SOURCE>TRUE</INCLUDE_LEAD_SOURCE>";
+			<INCLUDE_LEAD_SOURCE>FALSE</INCLUDE_LEAD_SOURCE>";
 
 		$silverpop_api->build("ExportList", $xml);
 		$response = $silverpop_api->execute();
