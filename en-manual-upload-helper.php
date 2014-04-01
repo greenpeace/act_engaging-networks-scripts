@@ -1,7 +1,7 @@
 <?php
 
 /**
- * SPLIT FILE EVERY 20k ROWS AND ADD TWO COLUMNS
+ * SPLIT FILE EVERY 60k ROWS AND ADD TWO COLUMNS
  * Split every 20,000 rows, beginning with column headers.
  * Now add N, Y and a P column to the end for Engaging Networks to
  * know that they are email_ok=Y and they "P"articipated 
@@ -21,8 +21,8 @@ $in = file($input);
 $header=$in[0]; // header row
 $counter = 1; 
 
-// split into files called upload_part_#.csv every 20,000 lines
-while ($chunk = array_splice($in, 0, 20000)){
+// split into files called upload_part_#.csv every 60,000 lines
+while ($chunk = array_splice($in, 0, 60000)){
       $f = @fopen("upload_part_".($counter++).".csv", "a");
 	  fwrite($f, $header);
       fwrite($f, implode("", $chunk));
