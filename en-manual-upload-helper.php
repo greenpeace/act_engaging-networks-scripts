@@ -1,7 +1,7 @@
 <?php
 
 /**
- * SPLIT FILE EVERY 60k ROWS AND ADD TWO COLUMNS
+ * SPLIT FILE EVERY 20k ROWS AND ADD TWO COLUMNS
  * Split every 20,000 rows, beginning with column headers.
  * Now add N, Y and a P column to the end for Engaging Networks to
  * know that they are email_ok=Y and they "P"articipated 
@@ -43,6 +43,8 @@ while ($counter > 0) {
 	foreach((array)$data as $val) {
 	   // first remove stray "double quotes"
 	   $val = preg_replace('/[^,]""[^,]/','',$val);
+	   // replace any field missing a double-quote with ""
+	   $val = preg_replace('([^"]+,")','""',$val);
 	   // then add our Y and P columns 
 	   fwrite($fp,$val.",Y,P\r\n");   
 	}
