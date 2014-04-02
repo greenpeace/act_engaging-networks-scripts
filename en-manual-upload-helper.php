@@ -44,7 +44,7 @@ while ($counter > 0) {
 	   // first remove stray "double quotes"
 	   $val = preg_replace('/[^,]""[^,]/','',$val);
 	   // replace any field missing a double-quote with ""
-	   $val = preg_replace('([^"]+,")','""',$val);
+	   //$val = preg_replace('([^"]+,")','""',$val); // sorry it was too greedy!
 	   // then add our Y and P columns 
 	   fwrite($fp,$val.",Y,P\r\n");   
 	}
