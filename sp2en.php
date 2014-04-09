@@ -16,28 +16,9 @@
  */
 
 
-/**
- * DATABASES TO SYNC
- * 
- */
-
-$databases = array(
-	// Silverpop ID => Engaging Networks import format name
-	"12141314" => "Tiger Manifesto Signups (Silverpop)",
-	"9131026" => "SaveTheArctic Signups (Silverpop)",
-	"9858509" => "GPI Main List Signups (Silverpop)",
-	"12297293" => "Send an SOS (Silverpop)"
-);
-
-
-
-/**
- * LOGIN DETAILS 
- * Include from config.php
- */
-
-
+// login and database details
 include("config.php");
+
 include("SilverpopAPI.php");
 set_include_path(get_include_path() . PATH_SEPARATOR . 'phpseclib');
 include('Net/SFTP.php');
@@ -218,7 +199,7 @@ foreach ($databases as $sp_database_id => $en_format_name) {
 	 * Keep a log for debugging
 	 */
 
-	$log_entry = $back_then.",".$now.",".$file_name.",".$en_format_name.",".$en_job_number.",".$total_count."\n";
+	$log_entry = $back_then.",".$now.",".$file_name.",".$en_format_name.",".$en_job_number.",".$count."\n";
 
 	file_put_contents("log.csv", $log_entry, FILE_APPEND);
 
