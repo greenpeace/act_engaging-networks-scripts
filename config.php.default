@@ -11,4 +11,17 @@ $sp_password = "";
 
 $en_token = ""; // Engaging Networks secret API token you'll get when you login to EN as an Admin
 
+
+/**
+ * DATABASES TO SYNC
+ * 
+ */
+
+$databases = array(
+	// Silverpop ID => Engaging Networks import format name
+	"12345" => "CampaignX Signups (Silverpop)",
+	"678910" => "MicrositeY Signups (Silverpop)"
+);
+
+
 ?>
