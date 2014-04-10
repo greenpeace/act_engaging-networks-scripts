@@ -6,7 +6,7 @@
  * Login details, database IDs, etc. 
  */
 
-$sp_username = ""; // as Global IT Support for a Silverpop account to use for API stuff
+$sp_username = ""; // ask Global IT Support for a Silverpop account to use for API stuff
 $sp_password = "";
 
 $en_token = ""; // Engaging Networks secret API token you'll get when you login to EN as an Admin
