@@ -45,7 +45,7 @@ if (($inputfp = fopen($input, "r")) !== FALSE) {
 		if ($fields == $cols_count) {
 		
 			// Add N, Y and P columns
-			$data[] = "N"; // optionally mapped to email_ok instead of Y if opting-out users			
+//			$data[] = "N"; // optionally mapped to email_ok instead of Y if opting-out users			
 			$data[] = "Y"; // normally mapped to email_ok
 			$data[] = "P"; // optionally mapped to a campaign
 			
